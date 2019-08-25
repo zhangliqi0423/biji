@@ -1,0 +1,176 @@
+☞ 移动WEB: 解决页面适配（同一个网页可以在不同设备中都能够正常预览【水平方向不能出现滚动条，页面中的文字或者图    片不能出现缩放）
+
+
+☞ 动画开始：
+
+     1. animation ： 补间动画【开始状态和结束状态】
+
+     2. animation动画实现步骤：
+
+            ✔ 定义一个动画集（动画序列）
+
+              @keyframes  自定义动画集名称  {
+
+                    from {
+                         开始状态的代码
+                    }
+
+                    to {
+                        结束状态的代码
+                    }
+              }
+
+
+            ✔ 标签通过调用动画集才可以执行对应的动画效果。
+
+                1. 通过动画名称调用动画集
+
+                     animation-name
+
+                2. 设置动画执行时间
+
+                      animation-duration
+
+                3. 设置动画执行次数
+
+                    animation-iteration-count: infinite;
+
+
+                4. 设置动画逆播
+
+                    animation-direction: alternate;
+
+
+                5. 设置动画速度类型：
+
+                    animation-timing-function
+
+
+                6. 设置动画在结束状态位置处停止动画
+
+                    animation-fill-mode: forwards;
+
+                    注意：
+                         1. 设置 animation-fill-mode 属性的时候，要保证动画的执行次数不能是无限次执行。
+
+
+                7. 设置动画延时效果
+
+                   animation-delay
+
+            ✔ 动画合写方式：
+
+                ◇ 必须设置动画名称
+
+                ◇ 必须设置动画执行时间
+
+                ◇ 没有先后顺序
+
+                ◇ 如果设置两个时间，第一个代表动画执行时间，第二个代表动画延时时间。
+
+        总结：
+             1. animation在执行动画过程中，不需要用户的触发行为，只要调用动画名称就可以执行
+
+             2. animation默认执行次数是1次
+
+             3. 一个元素可以同时调用多个动画集
+
+                例如：
+                
+                    animation: change_w  1s linear,
+
+                               change_h  1s linear  1s,
+
+                               change_bg 1s linear  2s  forwards;
+
+
+
+            4. 可以给动画集中通过百分比的形式设置动画效果
+
+            例如:
+                 @keyframes  change {
+
+                    0% {
+                        width: 200px;
+                        height: 200px;
+                    }
+
+                    50% {
+                        width: 200px;
+                    }
+
+                    100% {
+                        width: 400px;
+                        height: 400px;
+                    }
+                }
+
+
+            注意： 百分比相对的整个动画执行时间。
+
+
+☞3D转化
+
+      ✔2D转化: transform:  translate()   rotate()   scale();
+
+
+      ✔3D转化：其实就是比2D转换多了一条坐标轴  Z 轴
+
+              1. 3D坐标系：
+
+                     x轴： 水平从左向右为正方向
+
+                     y轴:  垂直从上向下为正方向
+
+                     z轴： 从内向外为正方向
+
+              2. 位移：
+                 
+                  transform: translateX()  translateY()  translateZ();
+
+
+                  注意：
+                      ✔ 在3D位移中，如果希望看到近大远小的效果，需要添加透视
+
+                      ✔ 给设置了transform属性元素的父元素设置透视
+
+                      ✔ 透视的取值：  perspective: 1000px; 【600-1000】
+
+                      ✔ 3D位移中可以设置百分比（相对元素自身）
+
+                      ✔ 通过3D位移的方式可以实现绝对定位的盒子居中
+
+                      例如：
+
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translateX(-50%)  translateY(-50%);
+
+                3. 旋转：
+
+                    transform: rotateX()  rotateY()   rotateZ();
+
+                    注意：
+                         元素的旋转方向。
+
+                4. 缩放：
+
+                     transform: scaleX() scaleY()  scaleZ();
+
+                     注意：
+                         在立体图形中scaleZ() 表示元素变 薄，厚
+
+    备注：
+         将平面图形转换为立体图形 ： transform-style: preserve-3d;
+
+                  
+
+
+
+
+☞补充：
+
+    目标伪类选择器： 要和锚链接配合使用。
+
+    :target {}

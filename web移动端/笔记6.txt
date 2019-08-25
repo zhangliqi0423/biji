@@ -1,0 +1,146 @@
+CSS框架：
+    1. 什么是框架？
+
+        第三方已经帮我们将CSS中常用的一些布局，样式封装好了 ---- 框架
+
+        本质： 就是一个CSS文件
+
+
+    2. 怎么学框架？
+         
+         ✔ 将已经封装好的CSS样式（常用）熟记。
+
+☞ 其他框架介绍：
+      1. http://amazeui.org/             妹子 UI: 实现响应式布局框架
+
+      2. http://framework7.taobao.org/   F7:  实现移动端应用开发的框架
+
+重点： Bootstrap框架
+
+      1. 基本的排版（了解）
+
+      2. 状态类（辅助类）（了解）
+
+      3. 栅格系统（会用）
+
+      4. 响应式工具（会用）
+
+
+
+      Bootstrap框架开始学习：
+
+      1. 什么是Bootstrap？  用于开发响应式布局、移动设备优先的 WEB 项目。
+
+      2. Bootstrap原理是什么？  利用媒体查询的方式，实现在不同设备中不同布局效果。
+
+      3. 具体的学习步骤：
+
+           ✔ 先下载BootstrapCSS文件：  下载下来后就是一个CSS文件
+
+
+           ✔ 初始化页面结构
+
+               ◇ 添加   <meta http-equiv="X-UA-Compatible" content="IE=edge"> （解决IE浏览器中支持媒体查询兼容性问题）
+
+
+               ◇ 添加  解决IE低版本兼容H5标签
+
+                 <!--[if lt IE 9]>
+                    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+                 <![endif]-->
+
+                ◇ 引用  bootstrap.min.css 文件
+
+            ✔ 排版标签：
+
+                 标题标签：  <h1></h1>   使用  类名  .h1 ，.h2 ....
+
+
+                 文字最小化标签：  <small></small>  
+
+
+                 设置内容对齐方式：   text-left |  text-center  | text-right
+
+                 
+                 实现字母大小写转化：  text-lowercase |   text-uppercase |  text-capitalize
+
+                       属性： text-transform
+
+
+
+                去掉列表中的默认样式：  list-unstyled
+
+                实现列表一行显示：   list-inline
+
+
+                表格中的常用类名：
+
+                        table-bordered   设置边框
+
+                        table-hover 鼠标悬停效果
+
+          ✔ 辅助类：
+
+
+
+
+      
+      4. 栅格系统：是Bootstrap框架中最有意义的知识点
+
+           ✔什么栅格系统？： 将设备分为12份的盒子。
+
+
+           ✔栅格系统作用？ ： 用来实现相应式布局。
+
+
+           ✔ 使用步骤：
+
+                 ◇ 使用栅格系统必须引用 bootstrap.min.css 文件。
+
+                 ◇ 要给父元素设置一个固定的类名：   container   或者 container-fluid
+
+                 ◇ 实现响应式布局 (栅格参数)
+
+                      col-md-值： 适配中等设备
+
+                        例如： col-md-2：  当前盒子在中等设备中元素的宽度占2份
+                     
+
+                      col-sm-值:  适配小设备
+
+                        例如： col-sm-2： 当前盒子在小设备中宽度占了2份
+
+
+                      col-xs-值: 适配手机设备
+
+                         例如： col-xs-2:  当前盒子在移动设备中占了2份
+
+
+                      col-lg-值: 适配大屏幕设备
+
+                        例如： col-lg-2：  当前盒子在大设备中占2份
+
+
+                      值：取值范围是 从  1-12
+
+
+      5. 响应式工具： 在响应式布局中对元素的隐藏和显示
+
+
+
+
+
+
+               
+
+
+          
+
+
+
+
+
+ 
+
+         

@@ -1,0 +1,23 @@
+☞ 响应式布局： 根据设备差异，网页布局会发生对应的改变
+
+☞ 核心技术点： 媒体查询 +  流式布局（伸缩布局）
+
+☞ 通过媒体查询如果实现相应式布局？
+
+      例如： 分析是PC设备
+      @media only screen and (min-width: 1025px) {
+
+      }
+
+      分析是中等设备
+      @media only screen and (max-width: 1024px) {
+
+      }
+
+      分析移动设备
+      @media only screen and (max-width: 768px) {
+
+      }
+
+
+

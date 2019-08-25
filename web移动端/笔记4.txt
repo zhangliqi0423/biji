@@ -1,0 +1,128 @@
+☞ 重点： rem + 媒体查询（页面精细化的适配）
+
+
+☞ Less
+
+     1. 什么是Less？
+
+         less: 用来维护或者管理CSS代码的一个工具
+
+     2. less作用？
+
+         less：更高效的去维护css代码。
+
+     3. less基本使用方式？
+
+          ✔ 新建一个less文件
+
+          ✔ less文件中就以直接写CSS代码
+
+          ✔ less中支持其他写法：
+
+               ◇ 定义变量： 保存页面中可能会发生改变的一些值
+
+                  @自定义变量名称: 值;
+
+
+               ◇ 支持css代码嵌套写法：
+
+                   选择器 {
+
+                        选择器 {
+
+                        }
+                   }
+
+
+                ◇ 支持数学运算: + - * /
+
+                 例如：  
+                    @num: 2;
+                    div {
+                        width: 200px+@num;
+                    }
+
+
+                ◇ 支持公共样式的设置
+
+                  例如：
+                    .public() {
+                        color: red;
+                    }
+                    p {
+                        .public(); 
+                    }
+
+
+                ◇ 公共样式中可以设置变量
+
+                  例如：
+                    .public(@abc) {
+                        color: @abc;
+                    }
+
+                    p {
+                        .public(red); 
+                    }
+
+
+            ✔ 如何在HTML页面中使用less文件
+
+                  1. 可以直接引用通过less编译后的css文件
+
+
+                  2. 可以直接在页面中引用less文件
+
+                      ☞ 通过link标签引用less文件
+
+                         例如： <link rel="stylesheet/less" href="03学习less.less">
+
+                      ☞ HTML页面中还需要引用less.js文件
+
+                         例如：  <script src="less.js"></script>
+
+                      ☞ 需要将当前代码放到服务器环境下
+
+
+
+☞ rem介绍：
+
+     rem: 相对单位【相对根标签中的文字大小， HTML标签中的文字大小 】
+      
+      em: 相对单位【相对当前标签中的文字大小】
+
+
+☞ rem如何实现页面适配： 依据设备不同，页面中设置的值也要随着发生改变。
+    
+
+
+☞ 如何获取当前设备的宽度？
+
+    通过媒体查询的方式可以获取当前设备的宽度
+
+
+    媒体查询：
+
+        ✔ 媒体类型：当前设备具体是什么？
+                
+                1. all (所有的设备)
+
+                2. print （打印设备）
+
+                3. screen （带有屏幕的设备   PC浏览器，移动设备）
+               
+
+        ✔ 媒体特性： 
+                设备的宽度,设备的高度,设备是横屏模式还是竖屏模式
+                width( min-width， max-widht )
+
+                height(min-height, max-height)
+
+                orientation: portrait [ˈpɔːtreɪt]   |  landscape [lændskeɪp]
+
+        ✔ 语法：
+
+              @media  only  screen  and  (媒体特性) {
+                   设置对应的CSS代码
+              }
+    
